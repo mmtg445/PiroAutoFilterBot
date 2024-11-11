@@ -47,19 +47,19 @@ AUTH_GROUPS = [int(ch) for ch in auth_grp.split()] if auth_grp else None
 support_chat_id = environ.get('-1002329322641')
 reqst_channel = environ.get('-1002164413929')
 REQST_CHANNEL = int(reqst_channel) if reqst_channel and id_pattern.search(reqst_channel) else None
-SUPPORT_CHAT_ID = "-1002329322641"
+SUPPORT_CHAT_ID = "SUPPORT_CHAT_ID", "-1002329322641"
 NO_RESULTS_MSG = bool(environ.get("NO_RESULTS_MSG", False))
 
 # MongoDB information
-DATABASE_URI = environ.get('DATABASE_URI', "")
-DATABASE_NAME = environ.get('DATABASE_NAME', "PIRO")
+DATABASE_URI = environ.get('DATABASE_URI', "mongodb+srv://rahat:rahat@rahat.ncjti.mongodb.net/?retryWrites=true&w=majority&appName=Rahat")
+DATABASE_NAME = environ.get('DATABASE_NAME', "Rahat")
 COLLECTION_NAME = environ.get('COLLECTION_NAME', 'FILES')
 
 # Others
 DELETE_CHANNELS = [int(dch) if id_pattern.search(dch) else dch for dch in environ.get('DELETE_CHANNELS', '0').split()]
 MAX_B_TN = environ.get("MAX_B_TN", "10")
 MAX_BTN = is_enabled((environ.get('MAX_BTN', "True")), True)
-LOG_CHANNEL = int(environ.get('-1002282949750', ))
+LOG_CHANNEL = int(environ.get('LOG_CHANNEL', '-1002282949750', ))
 SUPPORT_CHAT = environ.get('SUPPORT_CHAT' 'RM_Support_Group')
 P_TTI_SHOW_OFF = is_enabled((environ.get('P_TTI_SHOW_OFF', "True")), False)
 IMDB = is_enabled((environ.get('IMDB', "True")), True)
@@ -72,7 +72,7 @@ IMDB_TEMPLATE = environ.get("IMDB_TEMPLATE", '🍿 𝖳𝗂𝗍𝗅𝖾: <a href
 LONG_IMDB_DESCRIPTION = is_enabled(environ.get("LONG_IMDB_DESCRIPTION", "False"), False)
 SPELL_CHECK_REPLY = is_enabled(environ.get("SPELL_CHECK_REPLY", "True"), True)
 MAX_LIST_ELM = environ.get("MAX_LIST_ELM", None)
-INDEX_REQ_CHANNEL = int(environ.get('-1002282949750', LOG_CHANNEL))
+INDEX_REQ_CHANNEL = int(environ.get('INDEX_REQ_CHANNEL', LOG_CHANNEL))
 FILE_STORE_CHANNEL = [int(ch) for ch in (environ.get('FILE_STORE_CHANNEL', '-1002282949750')).split()]
 MELCOW_NEW_USERS = is_enabled((environ.get('MELCOW_NEW_USERS', "True")), True)
 PROTECT_CONTENT = is_enabled((environ.get('PROTECT_CONTENT', "False")), False)
